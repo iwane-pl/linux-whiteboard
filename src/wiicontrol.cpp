@@ -41,10 +41,13 @@ cwiid_wiimote_t* wii_connect(char *mac)
     /* cwiid_set_err(err); */
 
     bdaddr_t bdaddr; /* bluetooth device address */
-    if (!mac)
-	bdaddr = *BDADDR_ANY;
-    else
+	bdaddr_t bdaddr_any =  {{0, 0, 0, 0, 0, 0}};
+
+    if (!mac) {
+	bdaddr = bdaddr_any;
+	} else {
 	str2ba(mac, &bdaddr);
+	}
 
     /* Connect to the wiimote */
     cwiid_wiimote_t* wiimote = 0;

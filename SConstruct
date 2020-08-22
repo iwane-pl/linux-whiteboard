@@ -1,23 +1,23 @@
 
-env = Environment()
+# env = Environment()
 
 # OPTIONS #########################################################################
 
-opts = Options('options.conf')
-opts.AddOptions(
-	PathOption('DESTDIR','Set the intermediate install "prefix"', '/',
-		PathOption.PathAccept),
-	PathOption('PREFIX', 'Set the install "prefix"', '/usr',
-		PathOption.PathAccept)
+opts = Variables('options.conf')
+opts.Add(
+	PathVariable('DESTDIR','Set the intermediate install "prefix"', '/',
+		PathVariable.PathAccept),
 )
-opts.Update(env)
-opts.Save('options.conf',env)
+opts.Add(
+	PathVariable('PREFIX', 'Set the install "prefix"', '/usr',
+		PathVariable.PathAccept)
+)
+#opts.Update(env)
+#opts.Save('options.conf',env)
 
 ###################################################################################
 
-
-
-
+env = Environment(variables=opts)
 
 # DEPENDENCIES ####################################################################
 deps = (
@@ -26,7 +26,9 @@ deps = (
 	'gtkmm-2.4',
 	'libglademm-2.4',
 	'Xtst',
-	'gthread-2.0'
+	'gthread-2.0',
+	'X11',
+	'bluetooth',
 )
 
 conf = Configure(env)
