@@ -1,0 +1,13 @@
+This package was debianized by pnegre <pere.negre@gmail.com> on
+Fri, 26 Dec 2008 22:07:09 +0100.
+
+It was downloaded from http://code.google.com/p/linux-whiteboard/
+
+Upstream Author(s): read AUTHORS
+
+Copyright: read AUTHORS
+
+License: GPLv3
+
+The Debian packaging is (C) 2008, Pere Negre <pere.negre@gmail.com> and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL'.

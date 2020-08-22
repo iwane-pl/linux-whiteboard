@@ -1,0 +1,11 @@
+INSTALL
+-------
+
+With SCons, it's easy:
+
+	$ scons PREFIX=/usr DESTDIR=/
+	$ scons install
+
+Hopefully, it will detect all the necessary libraries prior to compile.
+
+
